@@ -1,5 +1,7 @@
 package traffic;
 
+import java.io.IOException;
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Scanner;
 
 public class TrafficManagement {
@@ -37,9 +39,9 @@ public class TrafficManagement {
         this.interval = interval;
     }
 
-    public void openSystem() {
-        System.out.println("System opened");
-        scanner.nextLine();
+    public void openSystem(ThreadSeconds counter) throws IOException {
+        counter.showCounter(this.getNumberOfRoads(), this.getInterval());
+//        System.out.printf("! " + "s. have passed since system startup !", counter.showCounter());
     }
 
     public boolean exitSystem() {
